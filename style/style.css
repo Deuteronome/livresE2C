@@ -26,6 +26,14 @@ header {
     background-color: #6c4747;
     height: 20vh;
     padding: 15px;
+    position: fixed;
+    width: 100vw ;
+    z-index: 10;
+}
+
+main {
+    position: relative;
+    top : 20vh;
 }
 
 h1, h2 {
@@ -67,7 +75,60 @@ ul {
 }
 
 #image {
-    height: 50vh;
+    display: flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    aspect-ratio : 1904/640; 
     width: 100vw;
     background-image: url('../asset/library.png');
+    background-repeat:no-repeat ;
+    background-size:100%;
+    background-attachment: fixed;
+    background-position-y: 22vh;
+    
+}
+
+#image>h2 {
+    font-size: 5rem;
+    padding-right: 2vw;
+    color : #ffebcd;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width:20vw;
+    height: 78vh;
+    background-color: #6c4747;
+    position: fixed;
+    top : 21vh;
+    margin-left: 1vh;
+    z-index: 5;
+}
+
+.bouton {
+    display: block;
+    text-decoration: none;
+    width : 80%;
+    height: 5vh;
+    background-color: #ffebcd;
+    color:#6c4747;
+    text-align: center;
+    padding-top: 7px;
+    border-radius: 2.5vh;
+    /*background-color: #6c4747;
+    color: #ffebcd;
+    box-shadow: #ffebcd 2px 2px 5px 0;
+    transition: box-shadow 250ms;*/
+    transition: background-color 1000ms, color 1000ms, border 5000ms;
+}
+
+.bouton:hover {
+    background-color: #6c4747;
+    color:#ffebcd;
+    border:#ffebcd 2px solid;
+    /*box-shadow: 0 0 2px 0 ;*/
 }
