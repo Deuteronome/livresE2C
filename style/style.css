@@ -104,9 +104,11 @@ nav {
     height: 78vh;
     background-color: #6c4747;
     position: fixed;
+    left: calc(-20vw - 1vh);
     top : 21vh;
     margin-left: 1vh;
     z-index: 5;
+    transition: left 1s;
 }
 
 .bouton {
@@ -131,4 +133,33 @@ nav {
     color:#ffebcd;
     border:#ffebcd 2px solid;
     /*box-shadow: 0 0 2px 0 ;*/
+}
+
+#trigger {
+    position: fixed;
+    top : 22vh;
+    width: 7vh;
+    aspect-ratio: 1;
+    background-color: #6c4747;
+    border: solid 2px black;
+    border-radius: 0 10px 10px 0;
+    background-image: url(../asset/menu.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: left 1s;
+}
+
+#close {
+    display : none;
+    position: relative;
+    top : -8vh;
+    left: 40%;
+    width: 5vh;
+    aspect-ratio: 1;
+    background-color: #6c4747;
+    border: solid 2px black;
+    border-radius: 5px;
+    background-image: url(../asset/croix.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }

@@ -6,6 +6,7 @@
     <title>Silence On Lit</title>
     <link rel="stylesheet" href="../style/style.css">
     <script type="module" src="../script/test.js"></script>
+    <script type="module" src="../script/nav.js"></script>
 </head>
 <body>
     <header>
@@ -17,6 +18,7 @@
     </header>
 
     <nav>
+        <div id="close"></div>
         <a href="../index.htm" class="bouton">Accueil</a>
         <a href="../page/library.htm" class="bouton">Bibliothèque</a>
         <a href="../page/game.htm" class="bouton">Espace détente</a>
@@ -24,7 +26,23 @@
     </nav>
 
     <main>
-        
+        <p id="result"></p>
+        <div>
+            <label for="number1">Premier nombre</label>
+            <input type="number" name="number1" id="number1">
+        </div>
+        <div>
+            <label for="number2">Deuxième nombre</label>
+            <input type="number" name="number2" id="number2">
+        </div>
+        <div>
+            <input type="submit" value="Calculer" id="calculate">
+        </div>
     </main>
+
+    <div id="trigger">
+
+
+    </div>
 </body>
 </html>
