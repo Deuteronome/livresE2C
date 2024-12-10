@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silence On Lit</title>
     <link rel="stylesheet" href="../style/style.css">
-    <script type="module" src="../script/test.js"></script>
+    <script type="module" src="../script/game.js"></script>
     <script type="module" src="../script/nav.js"></script>
 </head>
 <body>
@@ -26,18 +26,13 @@
     </nav>
 
     <main>
-        <p id="result"></p>
-        <div>
-            <label for="number1">Premier nombre</label>
-            <input type="number" name="number1" id="number1">
-        </div>
-        <div>
-            <label for="number2">Deuxième nombre</label>
-            <input type="number" name="number2" id="number2">
-        </div>
-        <div>
-            <input type="submit" value="Calculer" id="calculate">
-        </div>
+        <div id="menu-zone"></div>
+            <label for="menu">Choix du jeu</label>
+            <select name="menu" id="menu">
+                <option value="0">-Faites votre choix-</option>
+                <option value="1">Jeu 1</option>
+            </select>
+        <div id="gameZone"></div>
     </main>
 
     <div id="trigger">
