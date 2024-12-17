@@ -100,3 +100,28 @@ DROP site;
 /* Jointure */
 
 SELECT Users.pseudo, Users.email, Sites.name FROM  Users INNER JOIN Sites ON Users.site_id = Sites.id;
+
+
+/* Les livres */
+
+CREATE TABLE IF NOT EXISTS Genres (
+    id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL UNIQUE
+)ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS Livres (
+    id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    titre VARCHAR(255) NOT NULL,
+    auteur VARCHAR(255) NOT NULL DEFAULT "Inconnu",
+    genre_id TINYINT UNSIGNED NOT NULL DEFAULT 1,
+    synopsis TEXT,
+    date_of_edition CHAR(4) NOT NULL DEFAULT '-NC-',
+    pages SMALLINT,
+    site_id TINYINT UNSIGNED NOT NULL,
+    CONSTRAINT fk_genre
+        FOREIGN KEY (genre_id)
+        REFERENCES Genres(id),
+    CONSTRAINT fk_sites_book
+        FOREIGN KEY (site_id)
+        REFERENCES Sites(id)
+)ENGINE=InnoDB;

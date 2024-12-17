@@ -151,9 +151,9 @@ nav {
 
 #close {
     display : none;
-    position: relative;
-    top : -8vh;
-    left: 40%;
+    position: absolute;
+    top : 1vh;
+    right: 1vh;
     width: 5vh;
     aspect-ratio: 1;
     background-color: #6c4747;
