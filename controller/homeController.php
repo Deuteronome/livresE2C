@@ -1,28 +1,53 @@
+<?php
+    $isLogged = false;
+    $title = "Silence on Lit à l'E2C";
+    $subtitle = "Lire c'est bien";
+
+    $navButtons = 
+    [
+        [
+            "label" => "Accueil",
+            "path" => "../controller/homeController.php"
+        ],
+        [
+            "label" => "Bibliothèque",
+            "path" => "../controller/libraryController.php"
+        ],
+        [
+            "label" => "Espace détente",
+            "path" => "../controller/gameController.php"
+        ],
+        [
+            "label" => "Qui sommes nous?",
+            "path" => "../controller/usController.php"
+        ],
+    ];
+
+    if($isLogged) {
+        $navButtons[]= [
+            "label" => "Mon compte",
+            "path" => "../controller/accountController.php"
+        ];
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-wpage/library.htmidth, initial-scale=1.0">
     <title>Silence On Lit</title>
-    <link rel="stylesheet" href="./style/style.css">
-    <script type="module" src="./script/nav.js"></script>
+    <link rel="stylesheet" href="../style/style.css">
+    <script type="module" src="../script/nav.js"></script>
 </head>
 <body>
-    <header>
-        <img src="./asset/logo.png" alt="logo E2C" id="logo">
-        <div id="titres">
-            <h1>Silence on lit à l'E2C</h1>
-            <h2>Explorez votre imaginaire</h2>
-        </div>
-    </header>
+    
+    <?php
+        require_once("../module/_header.php");
+        require_once("../module/_nav.php");
+    ?>
 
-    <nav>
-        <div id="close"></div>
-        <a href="./index.htm" class="bouton">Accueil</a>
-        <a href="./page/library.htm" class="bouton">Bibliothèque</a>
-        <a href="./page/game.htm" class="bouton">Espace détente</a>
-        <a href="./page/us.htm" class="bouton">Qui sommes-nous</a>
-    </nav>
+   
 
     <main>
         <article>
@@ -48,7 +73,7 @@
         </div>
         <article>
             <p>Mettre en place le dispositif Silence, on lit ! au sein de <a href="http://e2c-grandlille.fr/" target="_blank">l’E2C (École de la 2ᵉ Chance)</a> à Lille présente de nombreux intérêts, en particulier pour les jeunes de 16 à 25 ans qui y suivent leur parcours de formation. Cette initiative, déjà bien intégrée dans de nombreuses écoles en France, consiste à consacrer 15 minutes chaque jour à la lecture silencieuse. Voici pourquoi elle pourrait avoir un impact positif au sein de l’E2C :</p>
-
+                ./index.htm
             <ul>
                 <li><strong>Développement des compétences de lecture</strong> : La lecture régulière, même pendant une courte durée, aide à renforcer la compréhension et la fluidité de lecture, compétences essentielles dans le monde du travail, en particulier dans le secteur numérique où il est nécessaire de lire et de comprendre des informations techniques ou des consignes.</li>
 
