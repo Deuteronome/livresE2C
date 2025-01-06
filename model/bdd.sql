@@ -125,3 +125,57 @@ CREATE TABLE IF NOT EXISTS Livres (
         FOREIGN KEY (site_id)
         REFERENCES Sites(id)
 )ENGINE=InnoDB;
+
+ALTER TABLE Livres
+    ADD COLUMN user_id SMALLINT UNSIGNED;
+
+ALTER TABLE Livres
+    ADD CONSTRAINT fk_livres_user
+    FOREIGN KEY (user_id)
+    REFERENCES Users(id);
+
+/*Les jointures*/
+
+SELECT titre, user_id FROM Livres;
+
+SELECT Livres.titre, Users.pseudo FROM Livres 
+    INNER JOIN Users ON Livres.user_id = Users.id;
+
+SELECT Livres.titre, Users.pseudo FROM Livres 
+    LEFT JOIN Users ON Livres.user_id = Users.id;
+
+SELECT Livres.titre, Users.pseudo FROM Livres 
+    RIGHT JOIN Users ON Livres.user_id = Users.id;
+
+SELECT Livres.titre, Genres.name, Users.pseudo FROM Livres 
+    INNER JOIN Users ON Livres.user_id = Users.id
+    INNER JOIN Genres ON Livres.genre_id = Genres.id;
+
+CREATE VIEW livres_vw AS (SELECT Livres.titre, Livres.auteur, Genres.name AS genre, Livres.date_of_edition AS date, Livres.pages, Sites.name AS site, Users.pseudo, Livres.id, Livres.genre_id, Livres.site_id, user_id FROM Livres
+LEFT JOIN Genres ON Livres.genre_id = Genres.id
+LEFT JOIN Sites ON Livres.site_id = Sites.id
+LEFT JOIN Users ON Livres.user_id = Users.id);
+
+/*Recherche */
+
+SELECT * FROM livres_vw WHERE pages <= 100 ORDER BY pages ASC; 
+
+/* Relation plusieurs à plusieurs - Commentaires */
+
+CREATE TABLE IF NOT EXISTS Comments (
+    comment TEXT NOT NULL,
+    user_id SMALLINT UNSIGNED NOT NULL,
+    livre_id SMALLINT UNSIGNED NOT NULL,
+    PRIMARY KEY (user_id, livre_id),
+    CONSTRAINT fk_comment_user
+        FOREIGN KEY (user_id)
+        REFERENCES Users(id),
+    CONSTRAINT fk_comment_livre
+        FOREIGN KEY (livre_id)
+        REFERENCES Livres(id)
+)ENGINE=InnoDB;
+
+SELECT Livres.titre, Users.pseudo, Comments.comment FROM Livres
+    INNER JOIN Comments ON Livres.id = Comments.livre_id
+    INNER JOIN Users ON Comments.user_id = Users.id
+    WHERE Livres.id = 35;
