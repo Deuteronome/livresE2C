@@ -50,8 +50,17 @@ h1, h2 {
     flex-direction:column;
     justify-content: space-evenly;
     align-items: center;
-    width : 80%;
+    width :55%;
     margin-right: 10%;
+}
+
+#logForm {
+    width : 25%;
+    border : #ffebcd solid 2px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 main {
@@ -219,6 +228,45 @@ nav {
     width : 80%;
     margin : 10px 0;
     aspect-ratio: 1;
-    background-size: cover;
+    back2ground-size: cover;
     border: #000000 solid 1px;
+}
+
+/* Formulaire de connexion */
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;    
+    width : 100%;
+}
+
+.form-line {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    margin : 5px 0;
+}
+
+.form-line>* {
+    display : block;
+}
+
+.login-bouton {
+    padding: 5px 10px;
+    background-color: #6c4747 ;
+    color : #ffebcd;    
+    border: #ffebcd solid 1px;
+    border-radius: 5px;
+    font-family: "custom";
+    font-size: 1.5rem;
+    margin: auto;
+}
+
+.login-bouton:hover {
+    background-color: #ffebcd ;
+    color : #6c4747; 
 }

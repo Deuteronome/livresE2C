@@ -1,8 +1,14 @@
 <?php
-    
-    //var_dump($username);
-    $title = "Faites votre choix";
-    $subtitle = "Y en a pour tous les goûts";
+
+    $isLogged = false;
+
+    if(!$isLogged) {   
+
+        header("location: ../controller/homeController.php");
+    }
+
+    $title = "Mon compte";
+    $subtitle = "Mes infos qu'à moi";
 
     $navButtons = 
     [
@@ -22,8 +28,11 @@
             "label" => "Qui sommes nous?",
             "path" => "../controller/usController.php"
         ],
+        [
+            "label" => "Mon compte",
+            "path" => "../controller/accountController.php"
+        ]
     ];
 
-    require_once("../view/libraryView.php");
 
-
+    require_once("../view/accountView.php");

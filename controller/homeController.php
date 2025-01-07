@@ -1,5 +1,5 @@
 <?php
-    $isLogged = false;
+    $isLogged =false;
     $title = "Silence on Lit à l'E2C";
     $subtitle = "Lire c'est bien";
 
