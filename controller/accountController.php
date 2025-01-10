@@ -1,8 +1,8 @@
 <?php
+    session_start();
+    
 
-    $isLogged = false;
-
-    if(!$isLogged) {   
+    if(!isset($_SESSION['id'])) {   
 
         header("location: ../controller/homeController.php");
     }

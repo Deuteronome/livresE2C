@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $title = "Des jeux";
     $subtitle = "Pour se muscler l'esprit";
 
@@ -21,6 +22,13 @@
             "path" => "../controller/usController.php"
         ],
     ];
+
+    if(isset($_SESSION["id"])) {
+        $navButtons[]= [
+            "label" => "Mon compte",
+            "path" => "../controller/accountController.php"
+        ];
+    }
 
     require_once("../view/gameView.php");
 
