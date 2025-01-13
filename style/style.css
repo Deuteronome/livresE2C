@@ -59,6 +59,7 @@ h1, h2 {
     border : #ffebcd solid 2px;
     border-radius: 5px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -256,6 +257,8 @@ nav {
 }
 
 .login-bouton {
+    display: block;
+    text-decoration: none;
     padding: 5px 10px;
     background-color: #6c4747 ;
     color : #ffebcd;    
@@ -277,4 +280,63 @@ nav {
     font-family: sans-serif;
     color: #ff0000;
     font-size: 0.5rem;
+}
+
+/*Table des livres*/
+
+#book-table {
+    width : 80vw;
+    margin: 2vh 0;
+    display: flex;
+    flex-direction:column ;
+    justify-content: start;    
+}
+
+#head-line {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    background-color: #6c4747;
+    color: #ffebcd;
+    text-align: center;
+}
+
+.book-line {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.title {
+    border: #6c4747 solid 1px;
+    width : 35%;
+    padding: 0 5px;    
+}
+
+.author{
+    border: #6c4747 solid 1px;
+    width : 20%;
+    padding: 0 5px;
+}
+
+.genre {
+    border: #6c4747 solid 1px;
+    width : 20%;
+    padding: 0 5px;
+}
+
+.date {
+    border: #6c4747 solid 1px;
+    width : 10%;
+    padding: 0 5px;
+}
+
+.link {
+    border: #6c4747 solid 1px;
+    width : 15%;
+    padding: 0 5px;
 }

@@ -10,6 +10,7 @@
                     $username = $_SESSION["pseudo"];
                 ?>
                     <p><?= "Bonjour $username" ?></p>
+                    <a href="../controller/logoutController.php" class="login-bouton">Déconnexion</a>
                 <?php
                 }else {
                 ?>

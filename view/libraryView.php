@@ -16,7 +16,28 @@
 
 
     <main>
-        
+        <div id="book-table">
+            <div id="head-line">
+                <div class="title">Titre</div>
+                <div class="author">Auteur</div>
+                <div class="genre">Genre</div>
+                <div class="date">Date</div>
+                <div class="link"></div>
+            </div>
+            <?php
+                foreach($bookList AS $book) {
+                ?>
+                    <div class="book-line">
+                        <div class="title"><?= $book["titre"] ?></div>
+                        <div class="author"><?= $book["auteur"] ?></div>
+                        <div class="genre"><?= $book["genre"] ?></div>
+                        <div class="date"><?= $book["date"] ?></div>
+                        <div class="link"></div>
+                    </div>
+                <?php
+                }
+            ?>
+        </div>
     </main>
 
     <div id="trigger"></div>
